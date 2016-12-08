@@ -31,7 +31,6 @@
     
 
     [playVideo startPanoramaLiveRemoteVideoForCid:self.cid];
-    [playVideo configV360];
     
     [self.view addSubview:playVideo];
     
