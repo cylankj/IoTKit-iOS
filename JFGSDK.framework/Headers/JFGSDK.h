@@ -212,6 +212,16 @@
                       vkey:(NSString *)vkey
                    cerType:(NSString *)cerType;
 
+/**
+ *  @param loginType  3.QQ Login 4.sina Login 5.user-defined Login
+ */
++(void)openLoginWithOpenId:(NSString *)openId
+               accessToken:(NSString *)accToken
+                       vid:(NSString *)vid
+                      vkey:(NSString *)vkey
+                   cerType:(NSString *)cerType
+                 loginType:(int)loginType;
+
 
 /*!
  *  获取账号属性

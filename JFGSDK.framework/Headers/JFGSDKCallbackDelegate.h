@@ -269,9 +269,12 @@
  *  检测账号是否存在
  *
  *  @param account 被检查的账号
- *  @param isExist 是否存在
+ *  @param isExist 是否是好友
+ *  @param errorType 账号是否注册（0：已注册  240：未注册）
  */
--(void)jfgCheckAccount:(NSString *)account alias:(NSString *)alias isExist:(BOOL)isExist;
+-(void)jfgCheckAccount:(NSString *)account alias:(NSString *)alias isExist:(BOOL)isExist errorType:(JFGErrorType)errorType;
+
+
 
 /**
  *  分享设备结果
