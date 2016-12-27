@@ -306,6 +306,22 @@
  */
 +(void)forgetPasswordWithEmail:(NSString *)email vid:(NSString *)vid;
 
+
+/**
+ *  第三方登录首次绑定手机/邮箱设置密码
+ *
+ *  @param password 密码
+ *  @param type     绑定类型  0-绑定手机 1-绑定邮箱
+ *  @param token    #sendSMSWithPhoneNumber:type 获取的token，如果绑定手机号，需要填充，绑定邮箱不需要
+ 
+ *  Third party login first bind phone / mailbox password
+ *
+ *  @param password password
+ *  @param type     bindType  0-phone 1-email
+ *  @param token    Get token from #sendSMSWithPhoneNumber:type，If the binding phone number, need to fill, bind mailbox does not need
+ */
++(void)setPassword:(NSString *)password forType:(int)type smsToken:(NSString *)token;
+
 #pragma mark- 好友相关
 /**
  *  获取好友列表

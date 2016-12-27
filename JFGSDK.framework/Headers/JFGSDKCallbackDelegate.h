@@ -58,6 +58,13 @@
 -(void)jfgForgetPasswordResult:(JFGErrorType)errorType;
 
 /**
+ *  第三方登录绑定手机号/邮箱，设置密码结果
+ *
+ *  @param errorType 错误码
+ */
+-(void)jfgSetPasswordForOpenLoginResult:(JFGErrorType)errorType;
+
+/**
  *  重置密码
  *
  *  @param errorType 错误码
