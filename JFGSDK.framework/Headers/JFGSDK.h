@@ -233,6 +233,13 @@
  */
 +(void)getAccount;
 
+/**
+ *  检查账号是否已经注册
+ *  check account is register
+ 
+ *  @param account 被检查账号
+ */
++(void)checkIsRegisteredForAccount:(NSString *)account;
 
 +(void)isOpenPush:(BOOL)push;
 
@@ -337,6 +344,17 @@
  *  get friend request list
  */
 +(void)getFriendRequestList;
+
+
+/**
+ *  删除某个添加好友请求
+ *
+ *  @param account 请求添加我为好友的账号
+ 
+ *  del add friend request
+ *  request add account
+ */
++(void)delAddRequestForFriendAccount:(NSString *)account;
 
 
 /**

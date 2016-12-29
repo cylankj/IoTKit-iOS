@@ -2,7 +2,7 @@
 //  FLProressHUD.h
 //  FLProgressHUD
 //
-//  Created by 紫贝壳 on 15/8/20.
+//  Created by cylan on 15/8/20.
 //  Copyright (c) 2015年 FL. All rights reserved.
 //
 

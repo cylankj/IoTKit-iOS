@@ -2,7 +2,7 @@
 //  FLProgressHUDRingIndicatorView.m
 //  FLProgressHUD
 //
-//  Created by 紫贝壳 on 15/8/21.
+//  Created by cylan on 15/8/21.
 //  Copyright (c) 2015年 FL. All rights reserved.
 //
 

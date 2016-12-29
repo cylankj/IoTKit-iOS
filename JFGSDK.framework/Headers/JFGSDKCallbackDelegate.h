@@ -50,12 +50,6 @@
  */
 -(void)jfgVerifySMSResult:(JFGErrorType)errorType;
 
-/**
- *  忘记密码结果
- *
- *  @param errorType 错误码
- */
--(void)jfgForgetPasswordResult:(JFGErrorType)errorType;
 
 /**
  *  第三方登录绑定手机号/邮箱，设置密码结果
@@ -63,13 +57,6 @@
  *  @param errorType 错误码
  */
 -(void)jfgSetPasswordForOpenLoginResult:(JFGErrorType)errorType;
-
-/**
- *  重置密码
- *
- *  @param errorType 错误码
- */
--(void)jfgChangerPasswordResult:(JFGErrorType)errorType;
 
 
 /**
@@ -102,13 +89,6 @@
  *  @param account 账户信息
  */
 -(void)jfgUpdateAccount:(JFGSDKAcount *)account;
-
-/**
- *  设置账号信息
- *
- *  @param errorType 错误码
- */
--(void)jfgResetAccountResult:(JFGErrorType)errorType;
 
 #pragma mark - Device Message
 /*!
@@ -273,7 +253,16 @@
 -(void)jfgResultIsRelatedToFriendWithType:(JFGFriendResultType)type error:(JFGErrorType)errorType;
 
 /**
- *  检测账号是否存在
+ *  账号请求相关回调
+ *
+ *  @param type      返回类型
+ *  @param errorType 结果
+ */
+-(void)jfgResultIsRelatedToAccountWithType:(JFGAccountResultType)type error:(JFGErrorType)errorType;
+
+
+/**
+ *  判断账号是否是好友，同时在登录状态下判断账号是否已经注册
  *
  *  @param account 被检查的账号
  *  @param isExist 是否是好友
