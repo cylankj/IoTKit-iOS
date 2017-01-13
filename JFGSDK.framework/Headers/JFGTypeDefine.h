@@ -380,5 +380,16 @@ typedef NS_ENUM(NSUInteger,JFGSDKServerType)
 };
 
 
+//获取url类型
+typedef NS_ENUM(NSUInteger,JFGSDKGetCloudUrlType)
+{
+    JFGSDKGetCloudUrlTypeUserHead,// 头像URL
+    JFGSDKGetCloudUrlTypeWarning,// 头像URL
+    JFGSDKGetCloudUrlTypeFeedbackLog,//反馈日志URL
+    JFGSDKGetCloudUrlTypeTimeLapseVideo,// 延时摄影视频URL
+    JFGSDKGetCloudUrlTypeWonder,// 每日精彩URL
+};
+
+
 
 

@@ -641,6 +641,22 @@
 +(NSString *)getCloudUrlWithFlag:(int)flag fileName:(NSString *)fileName;
 
 
+
+/**
+ *  获取云存储文件访问路径
+ *
+ *  @param type     类型
+ *  @param cid      设备标示，如果不是获取设备相关url，则填空
+ *  @param flag     存储标识
+ *  @param fileName 文件完整路径
+ *
+ *  @return 文件云访问路径
+ 
+ *  Access to cloud storage file access path
+ */
++(NSString *)getCloudUrlByType:(JFGSDKGetCloudUrlType)type flag:(int)flag fileName:(NSString *)fileName cid:(NSString *)cid;
+
+
 /**
  *  copy cloud file to wonder
  *
