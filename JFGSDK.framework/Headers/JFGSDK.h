@@ -25,7 +25,7 @@
  *  @param dir  sdk work directory
  
  */
-+(void)connectForWorkDir:(NSString *)path;
++(void)connectWithVid:(NSString *)vid vKey:(NSString *)vkey ForWorkDir:(NSString *)path;
 
 
 /*!
@@ -87,7 +87,6 @@
 #pragma mark - 登录与注册 Login and register
 /*!
  *  用户注册
- *  注册成功之后,此回话即可正常使用
  *  @param account  账号
  *  @param keyword  密码
  *  @param type     注册类型，0：手机注册  1：email注册
@@ -97,7 +96,6 @@
  
  ~English
  *  register
- *  After successful registration, the answer can be used normally, no need to call #userLogin: keyword
  *  @param account
  *  @param keyword   password
  *  @param type      register Type 0:phone 1:email
@@ -108,8 +106,7 @@
 +(void)userRegister:(NSString *)account
             keyword:(NSString *)keyword
        registerType:(NSInteger)type
-              token:(NSString *)token
-                vid:(NSString *)vid;
+              token:(NSString *)token;
 
 /**
  *  send SMS code
@@ -141,14 +138,10 @@
  *  Login
  *  @param account
  *  @param keyword password
- *  @param vid
- *  @param vkey
  *  call-back #jfgLoginResult:
  */
 +(JFGErrorType)userLogin:(NSString *)account
-                 keyword:(NSString *)keyword
-                     vid:(NSString *)vid
-                    vkey:(NSString *)vkey;
+                 keyword:(NSString *)keyword;
 
 
 /**
@@ -162,8 +155,6 @@
  */
 +(JFGErrorType)userLogin:(NSString *)account
                  keyword:(NSString *)keyword
-                     vid:(NSString *)vid
-                    vkey:(NSString *)vkey
                  cerType:(NSString *)cerType;
 
 
@@ -195,21 +186,16 @@
  ~English
  *  Third-party login
  *  @param openId   Third party unique user mark
- *  @param oem      Third party manufacturers marked
  *  @param accToken Access credentials
  *  call-back  #jfgLoginResult:
  */
 +(void)openLoginWithOpenId:(NSString *)openId
-               accessToken:(NSString *)accToken
-                       vid:(NSString *)vid
-                      vkey:(NSString *)vkey;
+               accessToken:(NSString *)accToken;
 
 
 
 +(void)openLoginWithOpenId:(NSString *)openId
                accessToken:(NSString *)accToken
-                       vid:(NSString *)vid
-                      vkey:(NSString *)vkey
                    cerType:(NSString *)cerType;
 
 /**
@@ -217,8 +203,6 @@
  */
 +(void)openLoginWithOpenId:(NSString *)openId
                accessToken:(NSString *)accToken
-                       vid:(NSString *)vid
-                      vkey:(NSString *)vkey
                    cerType:(NSString *)cerType
                  loginType:(int)loginType;
 
@@ -307,11 +291,10 @@
  *  忘记密码（邮箱）
  *
  *  @param email 修改的邮箱
- *  @param vid   vid
  
  *  forget password (email)
  */
-+(void)forgetPasswordWithEmail:(NSString *)email vid:(NSString *)vid;
++(void)forgetPasswordWithEmail:(NSString *)email;
 
 
 /**
@@ -627,19 +610,6 @@
  *  @param  requestId  request ID
  */
 +(void)uploadFile:(NSString *)filePath toCloudFolderPath:(NSString *)folderPath requestId:(uint64_t)requestId;
-
-/**
- *  获取云存储文件访问路径
- *
- *  @param flag     存储标识
- *  @param fileName 文件完整路径
- *
- *  @return 文件云访问路径
- 
- *  Access to cloud storage file access path
- */
-+(NSString *)getCloudUrlWithFlag:(int)flag fileName:(NSString *)fileName;
-
 
 
 /**

@@ -14,6 +14,7 @@
 #import "MessageViewController.h"
 #import "BindingDevicesViewController.h"
 #import "AddDeviceViewController.h"
+#import <JFGSDK/JFGSDKVideoView.h>
 #import <JFGSDK/JFGSDKDataPoint.h>
 #import <SystemConfiguration/SystemConfiguration.h>
 #import <SystemConfiguration/CaptiveNetwork.h>
@@ -24,13 +25,8 @@
 #define REMOTE_VIEW_TAG 1000
 #define LOCALL_VIEW_TAG 1001
 
-
 #define USERNAME @"18503060168"
-#define USERPASS @"123456"
-
-#define VID @"0001"
-#define VKEY @"dnwB7zfqjOqUmayw9XbVbfWh8ahSIShs"
-
+#define USERPASS @"111111"
 
 @interface ViewController ()<JFGSDKCallbackDelegate,UITextFieldDelegate>
 {
@@ -44,7 +40,6 @@
     
     NSArray *_deviceList;
     NSDate *recordDate;
-    
     
     UITextField *accountTextField;
     UITextField *passwordTextField;
@@ -64,11 +59,13 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
    
+    
+    
     NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
     path = [path stringByAppendingPathComponent:@"jfgworkdic"];
     
     //SDK初始化
-    [JFGSDK connectForWorkDir:path];
+    [JFGSDK connectWithVid:@"网站注册所得VID" vKey:@"网站注册所得VKEY" ForWorkDir:path];
     
     //SDK回调设置
     [JFGSDK addDelegate:self];
@@ -83,47 +80,10 @@
     
     [self initView];
 
-    
-//    DataPointIDVerSeg * seg0 = [[DataPointIDVerSeg alloc]init];
-//    seg0.msgId = 201;
-//    DataPointIDVerSeg * seg1 = [[DataPointIDVerSeg alloc]init];
-//    seg1.msgId = 205;
-//    DataPointIDVerSeg * seg2 = [[DataPointIDVerSeg alloc]init];
-//    seg2.msgId = 203;
-//    DataPointIDVerSeg * seg3 = [[DataPointIDVerSeg alloc]init];
-//    seg3.msgId = 206;
-//    DataPointIDVerSeg * seg4 = [[DataPointIDVerSeg alloc]init];
-//    seg4.msgId = 208;
-//    DataPointIDVerSeg * seg5 = [[DataPointIDVerSeg alloc]init];
-//    seg5.msgId = 209;
-//    
-//    NSArray * msgArr0 = @[seg0,seg1,seg3,seg4,seg5,seg2];
-//    
-//    
-//    [[JFGSDKDataPoint sharedClient]robotGetDataForCacheWithPeer:@"200000149340" msgIds:msgArr0 asc:NO limit:1 success:^(NSString *identity, NSArray<NSArray<DataPointSeg *> *> *idDataList) {
-//        if (idDataList.count > 0) {
-//            NSMutableArray * tempArray = [NSMutableArray array];
-//            
-//            for (NSArray * subArr in idDataList) {
-//                for (DataPointSeg *seg in subArr) {
-//                    NSError * error = nil;
-//                    id obj = [MPMessagePackReader readData:seg.value error:&error];
-//                    [tempArray addObject:obj];
-//                    NSLog(@"_______%@",tempArray);
-//                }
-//            }
-//            
-//            
-//        }
-//        
-//       
-//    }];
-    
-    
-
-
-    NSLog(@"sdkVersion:%@",[JFGSDK getSDKVersion]);
+    //200000149340
 }
+
+
 
 -(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
@@ -131,6 +91,8 @@
 }
 
 #pragma mark- JFGSDK Delegate
+
+#pragma mark- 登录相关回调
 //账号在线状态改变通知
 -(void)jfgAccountOnline:(BOOL)online
 {
@@ -145,7 +107,6 @@
     if (errorType == JFGErrorTypeNone) {
         
         [self isLoginSuccess:YES];
-        //[JFGSDK addFriendByAccount:@"1586711571@qq.com" additionTags:@"hello"];
         
     }else{
         
@@ -153,11 +114,13 @@
     }
 }
 
--(void)jfgResultIsRelatedToFriendWithType:(JFGFriendResultType)type error:(JFGErrorType)errorType
+-(void)jfgLoginOutByServerWithCause:(JFGErrorType)errorType
 {
     
 }
 
+
+#pragma mark- 注册相关回调
 //注册结果
 -(void)jfgRegisterResult:(JFGErrorType)errorType
 {
@@ -192,7 +155,7 @@
 {
     
     if (errorType == 0) {
-        [JFGSDK userRegister:accountTextField.text keyword:passwordTextField.text registerType:0 token:smsToken vid:VID];
+        [JFGSDK userRegister:accountTextField.text keyword:passwordTextField.text registerType:0 token:smsToken];
     }
 }
 
@@ -217,7 +180,7 @@
 //账号信息
 -(void)jfgUpdateAccount:(JFGSDKAcount *)account
 {
-    NSLog(@"phone:%@",account.phone);
+    NSLog(@"alias:%@ account:%@",account.alias,account.account);
 }
 
 -(void)jfgDoorbellCall:(JFGSDKDoorBellCall *)call
@@ -232,10 +195,10 @@
     if (success) {
         
         //获取账号信息
-        [JFGSDK getAccount];
         [FLProressHUD showTextFLHUDForStyleLightWithView:self.view text:@"登陆成功" position:FLProgressHUDPositionCenter];
         [FLProressHUD hideAllHUDForView:self.view animation:YES delay:1];
         NSLog(@"登陆成功");
+        [JFGSDK getAccount];
         
     }else{
         
@@ -315,6 +278,8 @@
         [FLProressHUD showTextFLHUDForStyleLightWithView:self.view text:@"请输入手机号" position:FLProgressHUDPositionCenter];
         [FLProressHUD hideAllHUDForView:self.view animation:YES delay:2];
     }else{
+        
+        //注册第一步:获取手机验证码
         [JFGSDK sendSMSWithPhoneNumber:accountTextField.text type:0];
     }
 }
@@ -347,8 +312,9 @@
         if ([accountTextField.text isEqualToString:@""] || [passwordTextField.text isEqualToString:@""]) {
             alertStr = @"请输入正确的账号密码信息";
         }else{
+            
             recordDate = [NSDate date];
-            [JFGSDK userLogin:accountTextField.text keyword:passwordTextField.text vid:VID vkey:VKEY];
+            [JFGSDK userLogin:accountTextField.text keyword:passwordTextField.text];
             alertStr = @"登录中...";
             isOk = YES;
         }
@@ -363,7 +329,11 @@
             
             alertStr = @"注册中...";
             isOk = YES;
-            [JFGSDK verifySMSWithAccount:accountTextField.text code:codeTextField.text token:smsToken];
+            
+            //注册第二步：验证手机验证码是否失效
+            [JFGSDK verifySMSWithAccount:accountTextField.text
+                                    code:codeTextField.text
+                                   token:smsToken];
             
         }
         
@@ -413,7 +383,9 @@
                 
             }else{
                 //登陆
-                [JFGSDK userLogin:USERNAME keyword:USERPASS vid:VID vkey:VKEY];
+                [JFGSDK userLogin:USERNAME keyword:USERPASS];
+                
+                //[JFGSDK openLoginWithOpenId:@"irvs1472975495761852" accessToken:@"" vid:VID vkey:VKEY];
             }
         }
             

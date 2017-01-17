@@ -150,7 +150,7 @@ typedef NS_ENUM (NSInteger,JFGAccountResultType)
 /*!
  *  网络类型定义
  */
-typedef NS_ENUM(NSUInteger,JFGNetType) {
+typedef NS_ENUM(NSInteger,JFGNetType) {
     /*!
      *  无网络,不在线
      */
@@ -191,7 +191,7 @@ typedef NS_ENUM(NSUInteger,JFGNetType) {
 /*!
  *  语言
  */
-typedef NS_ENUM(NSUInteger,JFGLanguageType) {
+typedef NS_ENUM(NSInteger,JFGLanguageType) {
     /*!
      *  中文
      */
@@ -230,7 +230,7 @@ typedef NS_ENUM(NSUInteger,JFGLanguageType) {
 /*!
  *  加菲狗设备类型
  */
-typedef NS_ENUM(NSUInteger,JFGDeviceType) {
+typedef NS_ENUM(NSInteger,JFGDeviceType) {
     /*!
      *  未知设备类型
      */
@@ -265,7 +265,7 @@ typedef NS_ENUM(NSUInteger,JFGDeviceType) {
 /*!
  *  推送消息类别
  */
-typedef NS_ENUM(NSUInteger,JFGPushNotificationType) {
+typedef NS_ENUM(NSInteger,JFGPushNotificationType) {
     /*!
      *  未知
      */
@@ -332,7 +332,7 @@ typedef NS_ENUM(NSUInteger,JFGPushNotificationType) {
 /*!
  *  绑定设备错误类型
  */
-typedef NS_ENUM(NSUInteger,JFGBindDeviceErrorType)
+typedef NS_ENUM(NSInteger,JFGBindDeviceErrorType)
 {
     /*!
      *  未知错误
@@ -361,7 +361,7 @@ typedef NS_ENUM(NSUInteger,JFGBindDeviceErrorType)
 };
 
 
-typedef NS_ENUM(NSUInteger,JFGSDKServerType)
+typedef NS_ENUM(NSInteger,JFGSDKServerType)
 {
     /*!
      *  测试平台
@@ -381,10 +381,10 @@ typedef NS_ENUM(NSUInteger,JFGSDKServerType)
 
 
 //获取url类型
-typedef NS_ENUM(NSUInteger,JFGSDKGetCloudUrlType)
+typedef NS_ENUM(NSInteger,JFGSDKGetCloudUrlType)
 {
     JFGSDKGetCloudUrlTypeUserHead,// 头像URL
-    JFGSDKGetCloudUrlTypeWarning,// 头像URL
+    JFGSDKGetCloudUrlTypeWarning,// 报警图片URL
     JFGSDKGetCloudUrlTypeFeedbackLog,//反馈日志URL
     JFGSDKGetCloudUrlTypeTimeLapseVideo,// 延时摄影视频URL
     JFGSDKGetCloudUrlTypeWonder,// 每日精彩URL
