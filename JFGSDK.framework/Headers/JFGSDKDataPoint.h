@@ -184,4 +184,17 @@ typedef void (^RobotDataFailedBlock)(RobotDataRequestErrorType type);
                            dpIDs:(NSArray <NSNumber *> *)dpids
                          success:(RobotSetDataRspBlock)block
                          failure:(RobotDataFailedBlock)failedBlock;
+
+
+-(NSNumber *)robotSetDataByTimeWithPeer:(NSString *)peer
+                                    dsp:(NSArray <DataPointSeg *>*)dps
+                                success:(RobotSetDataRspBlock)block
+                                failure:(RobotDataFailedBlock)failedBlock;
+
+
+-(NSNumber *)robotGetDataByTimeWithPeer:(NSString *)peer
+                                 msgIds:(NSArray <DataPointIDVerSeg *> *)idList
+                                success:(RobotGetDataRspBlock)block
+                                failure:(RobotDataFailedBlock)failedBlock;
+
 @end
