@@ -613,18 +613,11 @@
 
 
 /**
- *  获取云存储文件访问路径
- *
- *  @param type     类型
- *  @param cid      设备标示，如果不是获取设备相关url，则填空
- *  @param flag     存储标识
- *  @param fileName 文件完整路径
- *
- *  @return 文件云访问路径
- 
- *  Access to cloud storage file access path
+ * @brief 获取带签名的云存储URL
+ * @param regionType 文件存储地区标识，如美国，中国等。
+ * @param url 云存储URL
  */
-+(NSString *)getCloudUrlByType:(JFGSDKGetCloudUrlType)type flag:(int)flag fileName:(NSString *)fileName cid:(NSString *)cid;
++(NSString *)getCloudUrlWithFlag:(int)regionType fileName:(NSString *)fileName;
 
 
 /**
@@ -645,16 +638,6 @@
  * @note 可通过修改文件JFGSDKConstans.h 中JFGHTTP_PORT的值，来替换请求的post
  */
 +(int)httpPostWithReqPath:(NSString *)reqPath filePath:(NSString *)filePath;
-
-#pragma mark- 中控相关
-
-/**
- *  发送中控消息
- *
- *  @param data msgpack数据
- */
-+(void)sendEfamilyMsgData:(NSData *)data;
-
 
 
 @end

@@ -259,6 +259,10 @@ typedef NS_ENUM(NSInteger,JFGDeviceType) {
      *  加菲狗门窗磁感应器
      */
     JFGDeviceTypeDoorSensor,
+    /*!
+     *  全景摄像头
+     */
+    JFGDeviceTypePanoramicCamera,
 };
 
 
