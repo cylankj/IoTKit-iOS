@@ -34,6 +34,11 @@
  *  不为空标识设备是来自于分享
  */
 @property (nonatomic,copy) NSString *shareAccount;
+/**
+ *  厂家标示
+ */
+@property (nonatomic,copy) NSString *vid;
+
 
 
 @end
