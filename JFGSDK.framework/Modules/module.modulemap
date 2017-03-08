@@ -1,6 +1,0 @@
-framework module JFGSDK {
-  umbrella header "JFGSDK.h"
-
-  export *
-  module * { export * }
-}
