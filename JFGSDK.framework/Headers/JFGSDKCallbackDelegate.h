@@ -121,7 +121,7 @@
 /*!
  *  其他客户端已接听门铃的呼叫
  */
--(void)jfgOtherClientAnswerDoorbellCall;
+-(void)jfgOtherClientAnswerDoorbellForCid:(NSString *)cid;
 
 
 /*!

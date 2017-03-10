@@ -70,13 +70,18 @@
  */
 @property (nonatomic,assign)int time;
 /*!
- *  门铃截图地址
+ *  门铃地址
  */
-@property (nonatomic,copy)NSString *url;
+@property (nonatomic,assign)int regionType;
 /*!
  *  是否已经接听
  */
 @property (nonatomic,assign)BOOL isAnswer;
+
+/*!
+ *  upd呼叫地址
+ */
+@property (nonatomic,copy)NSString *ipAddr;
 
 @end
 

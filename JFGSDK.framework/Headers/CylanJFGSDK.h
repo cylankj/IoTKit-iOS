@@ -18,11 +18,11 @@
 +(BOOL)openLocalCamera:(BOOL)front;
 +(void)startRenderLocalView:(UIView *)view;
 +(void)stopRenderView:(BOOL)local withCid:(NSString *)cid;
-+(BOOL)disconnectVideo:(NSString *)remote;
++(void)disconnectVideo:(NSString *)remote;
 
 +(UIImage *)imageForSnapshot;
 +(void)getHistoryVideoListForCid:(NSString *)cid;
-+(BOOL)setAudio:(BOOL)local openMic:(BOOL)openMic openSpeaker:(BOOL)openSpeaker;
++(void)setAudio:(BOOL)local openMic:(BOOL)openMic openSpeaker:(BOOL)openSpeaker;
 
 
 
