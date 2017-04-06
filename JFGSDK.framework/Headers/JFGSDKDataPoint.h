@@ -23,6 +23,12 @@ typedef NS_ENUM (NSInteger,RobotDataRequestErrorType){
 //dp 获取数据请求成功回调block
 typedef void (^RobotGetDataRspBlock)(NSString *identity,NSArray <NSArray  <DataPointSeg *>*>*idDataList);
 
+//dp 获取数据请求成功回调block
+typedef void (^RobotGetMultiDataRspBlock)(NSDictionary <NSString *,NSDictionary *> *rspDict);
+
+
+typedef void (^RobotCountMultiDataRspBlock)(NSDictionary <NSString *,NSArray *> *rspDict);
+
 //dp 设置设备请求成功回调block
 typedef void (^RobotSetDataRspBlock)(NSArray <DataPointIDVerRetSeg*> *dataList);
 
@@ -32,7 +38,7 @@ typedef void (^RobotCountDataRspBlock)(NSString *identity, NSArray <DataPointCou
 //dp 删除消息回调
 typedef void (^RobotDelDataRspBlock)(NSString *identity,int ret);
 
-//dp 请求超时回调
+//dp 请求失败回调
 typedef void (^RobotDataFailedBlock)(RobotDataRequestErrorType type);
 
 
@@ -104,6 +110,14 @@ typedef void (^RobotDataFailedBlock)(RobotDataRequestErrorType type);
                           success:(RobotGetDataRspBlock)block
                           failure:(RobotDataFailedBlock)failedBlock;
 
+
+
+-(NSNumber *)robotGetMultiDataForReqDict:(NSDictionary <NSString *,NSArray <DataPointIDVerSeg *> *> *)reqDict
+                                   Limit:(int)limit
+                                     asc:(BOOL)asc
+                                 success:(RobotGetMultiDataRspBlock)block
+                                 failure:(RobotDataFailedBlock)failedBlock;
+
 /**
  *  混合查询
  *
@@ -169,6 +183,15 @@ typedef void (^RobotDataFailedBlock)(RobotDataRequestErrorType type);
                               dpIDs:(NSArray <NSNumber *> *)dpids
                             success:(RobotCountDataRspBlock)block
                             failure:(RobotDataFailedBlock)failedBlock;
+
+
+/*
+ 
+ */
+-(NSNumber *)robotCountMultiDataWithClear:(BOOL)clear
+                                 dpIDDict:(NSDictionary<NSString *,NSArray<NSNumber *> *> *)dpIDDict
+                                  success:(RobotCountMultiDataRspBlock)block
+                                  failure:(RobotDataFailedBlock)failedBlock;
 
 /**
  *  清空dp未读消息

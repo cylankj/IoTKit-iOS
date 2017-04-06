@@ -9,9 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "JFGSDKPlayVideoDelegate.h"
 
-
-
-
 //视频渲染视图
 @interface VideoRenderIosView : UIView
 

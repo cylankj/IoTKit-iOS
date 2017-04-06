@@ -117,6 +117,11 @@
  */
 -(void)jfgDevUpgradeInfo:(JFGSDKDeviceUpgrade *)info;
 
+/**
+ *  cylan
+ */
+-(void)jfgCheckClientVersionForErrorType:(JFGErrorType)errorType coerce_Upgrade:(int)coerce_Upgrade url:(NSString *)url;
+
 
 /*!
  *  其他客户端已接听门铃的呼叫
@@ -281,6 +286,9 @@
  */
 -(void)jfgShareResult:(JFGErrorType)ret device:(NSString *)cid forAccount:(NSString *)account;
 
+
+-(void)jfgMultiShareDeviceResult:(JFGErrorType)ret device:(NSString *)cid forAccount:(NSString *)account;
+
 /**
  *  取消分享
  *
@@ -346,6 +354,10 @@
  */
 -(void)jfgUploadDeviceTokenResult:(JFGErrorType)errorType;
 
-
+-(void)jfgMsgRobotForwardDataV2AckForTcpWithMsgID:(NSString *)msgID
+                                             mSeq:(uint64_t)mSeq
+                                              cid:(NSString *)cid
+                                             type:(int)type
+                                          msgData:(NSData *)msgData;
 
 @end

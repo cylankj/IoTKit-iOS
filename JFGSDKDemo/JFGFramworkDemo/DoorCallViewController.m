@@ -132,10 +132,6 @@
     JFGSDKDoorBellCall *cll = dataArray[indexPath.row];
     UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil];
     
-    NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:cll.url]];
-    UIImage *image = [UIImage imageWithData:imageData];
-    cell.imageView.image = image;
-    
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:cll.time];
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
     [formatter setDateFormat:@"MM-dd HH:mm:ss"];

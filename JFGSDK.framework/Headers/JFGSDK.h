@@ -27,6 +27,8 @@
  */
 +(void)connectWithVid:(NSString *)vid vKey:(NSString *)vkey ForWorkDir:(NSString *)path;
 
+//清空日志文件
++(void)resetLog;
 
 /*!
  *  添加JFGSDK回调代理
@@ -430,6 +432,11 @@
 +(void)unShareDevice:(NSString *)cid forFriend:(NSString *)account;
 
 /**
+ *  多对多分享
+ */
++(void)shareDevices:(NSArray <NSString *> *)cids toFriends:(NSArray <NSString *> *)accounts;
+
+/**
  *  获取设备已分享的好友列表
  *
  *  @param cidList 请求设备标示列表
@@ -523,6 +530,9 @@
                           pid:(uint32_t)pid
                       version:(NSString *)version;
 
+//cylan 8小时升级检测专用
++(void)checkClientVersion;
+
 
 /**
  *  局域网内升级设备
@@ -530,7 +540,8 @@
  *  @param url    用于设备升级的本地文件地址
  */
 +(void)deviceUpgreadeForIp:(NSString *)ip
-            upgradeFileUrl:(NSString *)url;
+                       url:(NSString *)url
+                       cid:(NSString *)cid;
 
 
 /**
@@ -603,13 +614,13 @@
  *  发送数据到云存储
  *
  *  @param filePath  文件完整路径
- *  @param requestId 作为输出参数
+ *  @param folderPath 上传文件存储路径
  
  *  send data to cloud storage
  *  @param  filePath  File full path
- *  @param  requestId  request ID
+ *  @return -1:failed   other:requestID
  */
-+(void)uploadFile:(NSString *)filePath toCloudFolderPath:(NSString *)folderPath requestId:(uint64_t)requestId;
++(uint64_t)uploadFile:(NSString *)filePath toCloudFolderPath:(NSString *)folderPath;
 
 
 /**
@@ -639,5 +650,7 @@
  */
 +(int)httpPostWithReqPath:(NSString *)reqPath filePath:(NSString *)filePath;
 
+
++(uint64_t)sendMsgForTcpWithDst:(NSArray <NSString *>*)dst isAck:(BOOL)isAck fileType:(int)fileType msg:(NSData *)msg;
 
 @end
