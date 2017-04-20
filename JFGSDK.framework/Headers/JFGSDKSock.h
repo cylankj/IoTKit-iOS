@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "JFGSDKSockCBDelegate.h"
+#import "JFGSDKDataPointModel.h"
 
 @interface JFGSDKSock : NSObject
 
@@ -37,6 +38,9 @@
 
 //发送20006消息
 -(uint64_t)sendMsgForSockWithDst:(NSArray <NSString *>*)dst isAck:(BOOL)isAck fileType:(int)fileType msg:(NSData *)msg;
+
+//dp
+-(uint64_t)sendDPDataMsgForSockWithPeer:(NSString *)peer dpMsgIDs:(NSArray <DataPointSeg *>*)dpMsgIDs;
 
 //下载专用接口
 -(uint64_t)sendMsgForSockDownloadWithDst:(NSArray <NSString *>*)dst fileName:(NSString *)fileName md5:(NSString *)md5 begin:(int)begin offset:(int)offset;

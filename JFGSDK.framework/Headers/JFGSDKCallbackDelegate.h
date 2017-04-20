@@ -164,6 +164,9 @@
 -(void)jfgHttpResposeRet:(int)ret requestID:(int)requestID result:(NSString *)result;
 
 
+-(void)jfgVideoShareUrl:(NSString *)url;
+
+
 #pragma mark- UDP通信
 /*!
  *  fping 回调
@@ -359,5 +362,11 @@
                                               cid:(NSString *)cid
                                              type:(int)type
                                           msgData:(NSData *)msgData;
+
+-(void)jfgDPMsgRobotForwardDataV2AckForTcpWithMsgID:(NSString *)msgID
+                                                mSeq:(uint64_t)mSeq
+                                                 cid:(NSString *)cid
+                                                type:(int)type
+                                            dpMsgArr:(NSArray *)dpMsgArr;
 
 @end

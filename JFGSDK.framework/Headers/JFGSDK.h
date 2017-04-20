@@ -456,6 +456,10 @@
  */
 +(void)getUnShareListByCid:(NSString *)cid;
 
+
+
++(void)getVideoShareUrlForFileName:(NSString *)fileName content:(NSString *)content ossType:(int)ossType shareType:(int)shareType;
+
 #pragma mark - UDP通信（局域网通信）UDP signal communication
 /*!
  *  fping命令
@@ -652,5 +656,9 @@
 
 
 +(uint64_t)sendMsgForTcpWithDst:(NSArray <NSString *>*)dst isAck:(BOOL)isAck fileType:(int)fileType msg:(NSData *)msg;
+
++(uint64_t)sendMsgForTcpDownloadWithDst:(NSArray <NSString *>*)dst fileName:(NSString *)fileName md5:(NSString *)md5 begin:(int)begin offset:(int)offset;
+
++(uint64_t)sendDPDataMsgForSockWithPeer:(NSString *)peer dpMsgIDs:(NSArray <DataPointSeg *>*)dpMsgIDs;
 
 @end
