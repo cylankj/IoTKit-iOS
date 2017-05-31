@@ -80,11 +80,11 @@
  *  upload devicee Token
  *
  *  @param deviceToken deviceToken
+ *  @param tokenType  1:servciceTypeIosApns  2:servciceTypeIosGetui
  */
-+(void)deviceTokenUpload:(NSData *)deviceToken;
++(void)deviceTokenUpload:(NSData *)deviceToken tokenType:(int)tokenType;
 
-
-+(void)deviceTokenUploadForString:(NSString *)deviceToken;
++(void)deviceTokenUploadForString:(NSString *)deviceToken tokenType:(int)tokenType;
 
 #pragma mark - 登录与注册 Login and register
 /*!
@@ -534,6 +534,24 @@
                           pid:(uint32_t)pid
                       version:(NSString *)version;
 
+
+/**
+ *  按设备区块检测设备升级状况
+ *
+ *  @param cid     设备标示
+ *  @param pid     设备型号ID
+ *  @param upgradeInfos 设备各个区块版本信息（url不用填写）
+ */
++(void)checkDevVersionWithCid:(NSString *)cid
+                          pid:(uint32_t)pid
+                 upgradeInfos:(NSArray <JFGSDKDevUpgradeInfo *>*)upgradeInfos;
+
+/**
+ *  整合升级检测
+ */
++(void)checkTagDeviceVersionForCid:(NSString *)cid;
+
+
 //cylan 8小时升级检测专用
 +(void)checkClientVersion;
 
@@ -602,6 +620,14 @@
 
 
 /*!
+ * 获取当前账号文件存储地区
+ 
+ ~English
+ * Get the current account file storage area
+ */
++(int)getRegionType;
+
+/*!
  *  萝卜头透传消息
  *
  *  @param message 透传消息体
@@ -660,5 +686,11 @@
 +(uint64_t)sendMsgForTcpDownloadWithDst:(NSArray <NSString *>*)dst fileName:(NSString *)fileName md5:(NSString *)md5 begin:(int)begin offset:(int)offset;
 
 +(uint64_t)sendDPDataMsgForSockWithPeer:(NSString *)peer dpMsgIDs:(NSArray <DataPointSeg *>*)dpMsgIDs;
+
+//广告位相关
++(void)getAdPolicyForLanguage:(int)language version:(NSString *)version resolution:(NSString *)resolution;
+
+//广告位点击数统计
++(void)statisticsADClickForLanguage:(int)language version:(NSString *)version tapUrl:(NSString *)tapUrl;
 
 @end

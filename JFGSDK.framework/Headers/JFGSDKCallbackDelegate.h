@@ -117,6 +117,21 @@
  */
 -(void)jfgDevUpgradeInfo:(JFGSDKDeviceUpgrade *)info;
 
+
+/**
+ *  设备分区块升级回调
+ */
+-(void)jfgDevMultPartsUpgradeInfos:(NSArray <JFGSDKDevUpgradeInfo *> *)infos
+                               cid:(NSString *)cid
+                         errorType:(JFGErrorType)errorType;
+
+/**
+ *  升级检测
+ */
+-(void)jfgDevCheckTagDeviceVersionInfos:(NSArray <JFGSDKDevUpgradeInfoT *> *)infos
+                                    cid:(NSString *)cid
+                              errorType:(JFGErrorType)errorType;
+
 /**
  *  cylan
  */
@@ -357,16 +372,25 @@
  */
 -(void)jfgUploadDeviceTokenResult:(JFGErrorType)errorType;
 
+
+/**
+ ad policy rsp
+ */
+-(void)jfgGetAdpolicyResult:(JFGErrorType)errorType endTime:(uint32_t)endtime picUrl:(NSString *)picUrl tagUrl:(NSString *)tagUrl;
+
+
 -(void)jfgMsgRobotForwardDataV2AckForTcpWithMsgID:(NSString *)msgID
                                              mSeq:(uint64_t)mSeq
                                               cid:(NSString *)cid
                                              type:(int)type
+                                     isInitiative:(BOOL)initiative
                                           msgData:(NSData *)msgData;
 
 -(void)jfgDPMsgRobotForwardDataV2AckForTcpWithMsgID:(NSString *)msgID
                                                 mSeq:(uint64_t)mSeq
                                                  cid:(NSString *)cid
                                                 type:(int)type
+                                        isInitiative:(BOOL)initiative
                                             dpMsgArr:(NSArray *)dpMsgArr;
 
 @end
