@@ -128,9 +128,11 @@
 /**
  *  升级检测
  */
--(void)jfgDevCheckTagDeviceVersionInfos:(NSArray <JFGSDKDevUpgradeInfoT *> *)infos
-                                    cid:(NSString *)cid
-                              errorType:(JFGErrorType)errorType;
+-(void)jfgDevCheckTagDeviceVersion:(NSString *)version
+                          describe:(NSString *)describe
+                          tagInfos:(NSArray <JFGSDKDevUpgradeInfoT *> *)infos
+                               cid:(NSString *)cid
+                         errorType:(JFGErrorType)errorType;
 
 /**
  *  cylan
@@ -203,11 +205,33 @@
 -(void)jfgSetWifiRespose:(JFGSDKUDPResposeSetWifi *)ask;
 
 
+/**
+ * 软起AP回调
+ *
+ * 成功回复ask.ret = 0
+ */
+-(void)jfgSetAPRespose:(JFGSDKUDPResposeSetAP *)ask;
+
+
+/**
+ * 局域网设置速率回调
+ *
+ * @param cid 设备cid
+ * @param ret 成功返回0
+ */
+-(void)jfgUdpSetBitrateResposeForCid:(NSString *)cid ret:(int)ret;
+
 #pragma mark- robot
 /*!
  *  收到萝卜头透传的消息
  */
 -(void)jfgOnRobotTransmitMsg:(JFGSDKRobotMessage *)message;
+
+/*!
+ *  收到萝卜头透传的消息2
+ */
+-(void)jfgOnUniversalData:(NSData *)msgData msgID:(int)mid seq:(long)seq;
+
 
 /*!
  *  萝卜头消息应答

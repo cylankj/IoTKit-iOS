@@ -161,6 +161,13 @@
 
 
 /**
+ md5加密后的密码登陆
+ */
++(JFGErrorType)userLogin:(NSString *)account
+           keywordForMD5:(NSString *)keyword
+                 cerType:(NSString *)cerType;
+
+/**
  *  Logined session
  *
  *  @return session
@@ -228,6 +235,8 @@
 +(void)checkIsRegisteredForAccount:(NSString *)account;
 
 +(void)isOpenPush:(BOOL)push;
+
++(void)resetAccountForWxpush:(int)wxpush;
 
 /**
  *  Users upload the picture after the account need to call this method to notify the server
@@ -504,6 +513,27 @@
                         ipAddr:(NSString *)ip
                            mac:(NSString *)mac;
 
+/*!
+ *  软起AP
+ *
+ *  @param cid  设备标示
+ *  @param ip   设备ip
+ *  @param model  1.开启AP   0.关闭AP
+ */
++(void)udpSetDevAPForCid:(NSString *)cid
+                      ip:(NSString *)ip
+                   model:(int)model;
+
+/*!
+ *  设置设备速率
+ *
+ *  @param cid  设备标示
+ *  @param ip   设备ip
+ *  @param mac  设备mac地址
+ *  @param bitrate  0.自动  1.标清  2.高清
+ */
++(void)udpSetBitrateForCid:(NSString *)cid mac:(NSString *)mac ip:(NSString *)ip bitrate:(int32_t)bitrate;
+
 #pragma mark - 解绑设备
 /**
  * 解绑设备（解绑成功后会触发#jfgDeviceList:回调）
@@ -638,6 +668,18 @@
  */
 +(BOOL)robotTransmitMsg:(JFGSDKRobotMessage *)message;
 
+
+/*!
+ *  萝卜头透传消息
+ *
+ *  @param msgData 透传消息内容
+ *  @param mid   消息号
+ *  @return seq  消息标记
+ 
+ ~English
+ *  @param msgData message
+ */
++(uint64_t)sendUniversalData:(NSData *)msgData forMsgID:(int)mid;
 
 #pragma mark 文件上传
 /**
