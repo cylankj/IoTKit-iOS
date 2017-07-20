@@ -17,6 +17,7 @@
 		8F1D9D521D768E8B005461C6 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F1D9D511D768E8B005461C6 /* GLKit.framework */; };
 		8F1D9D541D768E92005461C6 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F1D9D531D768E92005461C6 /* CoreMotion.framework */; };
 		8F22EE9A1CB79713001DA055 /* DoorCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F22EE991CB79713001DA055 /* DoorCallViewController.m */; };
+		8F3A1A2A1F204D4000614173 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F3A1A291F204D4000614173 /* libz.tbd */; };
 		8FC8C3221CAE7BA300273EE6 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC8C3211CAE7BA300273EE6 /* MessageViewController.m */; };
 		8FCEE96E1CB4E7DE009A92BE /* HistoryVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCEE96D1CB4E7DE009A92BE /* HistoryVideoViewController.m */; };
 		8FE37CD51CA509E700CA4AE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE37CD41CA509E700CA4AE6 /* main.m */; };
@@ -72,6 +73,7 @@
 		8F1D9D531D768E92005461C6 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		8F22EE981CB79713001DA055 /* DoorCallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoorCallViewController.h; sourceTree = "<group>"; };
 		8F22EE991CB79713001DA055 /* DoorCallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoorCallViewController.m; sourceTree = "<group>"; };
+		8F3A1A291F204D4000614173 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		8FC8C3201CAE7BA300273EE6 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		8FC8C3211CAE7BA300273EE6 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		8FCEE96C1CB4E7DE009A92BE /* HistoryVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryVideoViewController.h; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F3A1A2A1F204D4000614173 /* libz.tbd in Frameworks */,
 				8F1D9D541D768E92005461C6 /* CoreMotion.framework in Frameworks */,
 				8F1D9D521D768E8B005461C6 /* GLKit.framework in Frameworks */,
 				8F14E2841D55C1E900D17C24 /* JFGSDK.framework in Frameworks */,
@@ -159,6 +162,14 @@
 			path = FLProgressHUD;
 			sourceTree = "<group>";
 		};
+		8F3A1A281F204D4000614173 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8F3A1A291F204D4000614173 /* libz.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8FE37CC71CA509E700CA4AE6 = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +191,7 @@
 				8FE37CD21CA509E700CA4AE6 /* JFGFramworkDemo */,
 				8FE37CEC1CA509E700CA4AE6 /* JFGFramworkDemoUITests */,
 				8FE37CD11CA509E700CA4AE6 /* Products */,
+				8F3A1A281F204D4000614173 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -301,7 +313,7 @@
 				TargetAttributes = {
 					8FE37CCF1CA509E700CA4AE6 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = S2W52STCCW;
+						DevelopmentTeam = HD96H7YVW6;
 					};
 					8FE37CE81CA509E700CA4AE6 = {
 						CreatedOnToolsVersion = 7.1;
@@ -498,6 +510,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++98";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = HD96H7YVW6;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -511,7 +524,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = JFGFramworkDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -531,6 +544,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++98";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = HD96H7YVW6;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -544,7 +558,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = JFGFramworkDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
