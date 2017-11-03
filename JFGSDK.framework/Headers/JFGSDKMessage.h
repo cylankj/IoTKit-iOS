@@ -88,7 +88,7 @@
 @interface JFGSDKRobotMessage : NSObject
 
 /*!
- *  需要将消息发送的目标（目的地）
+ *  需要将消息发送的目标
  */
 @property (strong,nonatomic) NSArray <NSString *> * targets;
 
@@ -110,7 +110,7 @@
 
 
 /**
- *  消息发送者（设备cid）
+ *  消息发送者
  */
 @property (nonatomic,copy) NSString *caller;
 
