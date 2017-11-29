@@ -55,6 +55,8 @@
  */
 @property (nonatomic,copy)NSString *ver;
 
+@property (nonatomic,assign)int os;
+
 
 @end
 
