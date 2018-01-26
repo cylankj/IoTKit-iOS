@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "JFGErrorType.h"
 
 @interface CylanJFGSDK : NSObject
 
@@ -29,5 +30,20 @@
 +(void)setAudio:(BOOL)local openMic:(BOOL)openMic openSpeaker:(BOOL)openSpeaker;
 +(void)switchLiveVideo:(BOOL)isLive beigenTime:(int64_t)beigenTime;
 
+/**
+ * @brief  设置喇叭增益
+ * @param  level: 喇叭倍数,值为0.0-10.0之间,10.0为最大,默认是1.0
+ * return  #JFGErrorTypeNone 表示成功, 其他情况下可能是范围出错
+ * @note   值越小增益越大
+ */
++(JFGErrorType)setTargetLeveledBFS:(int)level;
+
+/**
+ * @brief  设置麦克风增益
+ * @param  level: 值为0-31之间,0为最大,默认是8
+ * return  #JFGErrorTypeNone 表示成功, 其他情况下可能是范围出错
+ * @note   值越小增益越大
+ */
++(JFGErrorType)setDefaultOutputVolumeScale:(float)scale;
 
 @end

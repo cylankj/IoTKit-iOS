@@ -21,7 +21,7 @@ typedef NS_ENUM (NSUInteger,JFGFriendResultType)
     JFGFriendResultTypeAgreeAddFriend,
     /// 设置好友备注名
     JFGFriendResultTypeSetRemarkName,
-    //删除好友请求
+    /// 删除好友请求
     JFGFriendResultTypeDelAddFriendRequest = 19,
 };
 
@@ -202,3 +202,56 @@ typedef NS_ENUM (NSUInteger,JFGHistorySearchWayType){
     JFGHistorySearchWayTypeByDay,//按天查询
     
 };
+
+/*!
+ *  \~chinese
+ *  第三方登录类型
+ *
+ *  \~english
+ *  Open login type
+ */
+typedef NS_ENUM (NSUInteger,JFGOpenLoginType){
+    
+    JFGOpenLoginTypeForQQ = 3,//QQ
+    JFGOpenLoginTypeForSinaWeibo,//新浪微博
+    JFGOpenLoginTypeForCustomLogin,//自定义登录
+    JFGOpenLoginTypeForTwitter,
+    JFGOpenLoginTypeForFacebook,
+    
+};
+
+/*!
+ *  \~chinese
+ *  短信验证码类型
+ *
+ *  \~english
+ *  SMS verification code type
+ */
+typedef NS_ENUM(NSUInteger,JFGSMSCodeType){
+    
+    JFGSMSCodeTypeRegisterOrBind,//注册或者绑定手机号
+    JFGSMSCodeTypeForgetPassword,//忘记密码
+    JFGSMSCodeTypeChangePassword,//修改密码
+    
+};
+
+/*!
+ *  \~chinese
+ *  接入APNS推送类型
+ *
+ *  \~english
+ *  Access APNS push type
+ */
+typedef NS_ENUM(NSUInteger,JFGAPNSType){
+    JFGAPNSTypeApple = 1,//苹果原生
+    JFGAPNSTypeGetui = 2,//个推
+};
+
+typedef NS_ENUM(NSUInteger,JFGBitRateType){
+    JFGBitRateTypeAuto,//自动
+    JFGBitRateTypeSD,//标清
+    JFGBitRateTypeHD,//高清
+};
+
+
+

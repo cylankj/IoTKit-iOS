@@ -11,7 +11,7 @@
  *  错误码
  */
 typedef NS_ENUM (NSUInteger, JFGErrorType){
-    // EOK 成功
+    // EOK 成功 success
     JFGErrorTypeNone = 0,
     
     // P2P 错误
