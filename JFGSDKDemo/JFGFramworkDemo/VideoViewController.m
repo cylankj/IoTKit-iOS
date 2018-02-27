@@ -5,7 +5,7 @@
 //
 //  Created by yangli on 16/4/5.
 //  Copyright © 2016年 yangli. All rights reserved.
-//
+//  视频播放页面，此类只提供简单的视频播放功能，详细功能请参考App源码 videoPlay1ViewController.m 类
 
 #import "VideoViewController.h"
 #import <JFGSDK/JFGSDK.h>

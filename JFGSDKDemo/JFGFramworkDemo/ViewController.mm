@@ -11,7 +11,6 @@
 #import <JFGSDK/JFGSDKBindingDevice.h>
 //#import <JFGSDK/JFGSDKBase.h>
 //#import "JFGSDK.h"
-#import "MessageViewController.h"
 #import "BindingDevicesViewController.h"
 #import "AddDeviceViewController.h"
 #import <JFGSDK/JFGSDKVideoView.h>

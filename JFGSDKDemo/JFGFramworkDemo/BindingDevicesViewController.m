@@ -12,7 +12,6 @@
 #import "DoorCallViewController.h"
 #import "AddDeviceViewController.h"
 #import <JFGSDK/JFGSDKDataPoint.h>
-#import "PanoramicCameraViewController.h"
 //200000149340
 @interface BindingDevicesViewController ()<JFGSDKCallbackDelegate,UITableViewDelegate,UITableViewDataSource>
 
@@ -131,9 +130,9 @@
 
 -(void)jfgResultIsRelatedToFriendWithType:(JFGFriendResultType)type error:(JFGErrorType)errorType
 {
-    NSLog(@"%d,%d",type,errorType);
+    
     if (type == JFGFriendResultTypeSetRemarkName) {
-        [JFGSDK getFriendInfoByAccount:@"yangli996@126.com"];
+        
     }
 }
 
@@ -208,49 +207,9 @@
     JFGSDKDevice *message = self.deviceList[indexPath.row];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
    
-    
-    switch ([message.pid intValue]) {
-        case 4:
-        case 5:
-        case 7:
-        case 13:{
-            
-            //摄像头
-            VideoViewController *video = [VideoViewController new];
-            video._cid = message.uuid;
-            [self.navigationController pushViewController:video animated:YES];
-            
-        }
-            break;
-        case 6:
-        case 14:
-        case 15:{
-            //门铃
-            VideoViewController *video = [VideoViewController new];
-            video._cid = message.uuid;
-            [self.navigationController pushViewController:video animated:YES];
-        }
-            break;
-        case 11:{
-            //门磁
-        }
-            break;
-        case 8:{
-            //中控
-        }
-            break;
-            
-        case 18:
-        case 86:{
-            PanoramicCameraViewController *pan = [PanoramicCameraViewController new];
-            pan.cid = message.uuid;
-            [self.navigationController pushViewController:pan animated:YES];
-        }
-            break;
-        default:
-            break;
-    }
-
+    VideoViewController *video = [VideoViewController new];
+    video._cid = message.uuid;
+    [self.navigationController pushViewController:video animated:YES];
 }
 
 -(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath

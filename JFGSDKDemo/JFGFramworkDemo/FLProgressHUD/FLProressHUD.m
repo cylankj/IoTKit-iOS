@@ -246,29 +246,14 @@
 {
     if (!_HUDView) {
         
-        if ([UIVisualEffectView class]) {
+        _HUDView = [[UIView alloc] init];
+        
+        if (_style == FLProgressHUDStyleDark) {
+            _HUDView.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.8f];
+        }
+        else if (_style == FLProgressHUDStyleLight) {
             
-            //ios8的毛玻璃效果
-            UIBlurEffectStyle effect;
-            if (self.style == FLProgressHUDStyleDark) {
-                effect = UIBlurEffectStyleDark;
-            }
-            else if(self.style == FLProgressHUDStyleLight) {
-                effect = UIBlurEffectStyleExtraLight;
-            }
-
-            _HUDView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:effect]];
-            
-        }else{
-            _HUDView = [[UIView alloc] init];
-            
-            if (_style == FLProgressHUDStyleDark) {
-                _HUDView.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.8f];
-            }
-            else if (_style == FLProgressHUDStyleLight) {
-                
-                _HUDView.backgroundColor = [UIColor colorWithWhite:0.97f alpha:0.8f];
-            }
+            _HUDView.backgroundColor = [UIColor colorWithWhite:0.97f alpha:0.8f];
         }
         
 

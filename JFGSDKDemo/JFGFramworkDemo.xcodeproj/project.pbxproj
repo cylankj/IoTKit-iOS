@@ -13,12 +13,10 @@
 		8F14E2911D55CBA200D17C24 /* FLProgressHUDPanIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F14E28A1D55CBA200D17C24 /* FLProgressHUDPanIndicatorView.m */; };
 		8F14E2921D55CBA200D17C24 /* FLProgressHUDRingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F14E28C1D55CBA200D17C24 /* FLProgressHUDRingIndicatorView.m */; };
 		8F14E2931D55CBA200D17C24 /* FLProressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F14E28F1D55CBA200D17C24 /* FLProressHUD.m */; };
-		8F1D9D501D768E3D005461C6 /* PanoramicCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1D9D4F1D768E3D005461C6 /* PanoramicCameraViewController.m */; };
 		8F1D9D521D768E8B005461C6 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F1D9D511D768E8B005461C6 /* GLKit.framework */; };
 		8F1D9D541D768E92005461C6 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F1D9D531D768E92005461C6 /* CoreMotion.framework */; };
 		8F22EE9A1CB79713001DA055 /* DoorCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F22EE991CB79713001DA055 /* DoorCallViewController.m */; };
 		8F3A1A2A1F204D4000614173 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F3A1A291F204D4000614173 /* libz.tbd */; };
-		8FC8C3221CAE7BA300273EE6 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC8C3211CAE7BA300273EE6 /* MessageViewController.m */; };
 		8FCEE96E1CB4E7DE009A92BE /* HistoryVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCEE96D1CB4E7DE009A92BE /* HistoryVideoViewController.m */; };
 		8FE37CD51CA509E700CA4AE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE37CD41CA509E700CA4AE6 /* main.m */; };
 		8FE37CD81CA509E700CA4AE6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE37CD71CA509E700CA4AE6 /* AppDelegate.m */; };
@@ -67,15 +65,11 @@
 		8F14E28D1D55CBA200D17C24 /* FLProgressHUDStyleEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLProgressHUDStyleEnum.h; sourceTree = "<group>"; };
 		8F14E28E1D55CBA200D17C24 /* FLProressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLProressHUD.h; sourceTree = "<group>"; };
 		8F14E28F1D55CBA200D17C24 /* FLProressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLProressHUD.m; sourceTree = "<group>"; };
-		8F1D9D4E1D768E3D005461C6 /* PanoramicCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanoramicCameraViewController.h; sourceTree = "<group>"; };
-		8F1D9D4F1D768E3D005461C6 /* PanoramicCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanoramicCameraViewController.m; sourceTree = "<group>"; };
 		8F1D9D511D768E8B005461C6 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		8F1D9D531D768E92005461C6 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		8F22EE981CB79713001DA055 /* DoorCallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoorCallViewController.h; sourceTree = "<group>"; };
 		8F22EE991CB79713001DA055 /* DoorCallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoorCallViewController.m; sourceTree = "<group>"; };
 		8F3A1A291F204D4000614173 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		8FC8C3201CAE7BA300273EE6 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
-		8FC8C3211CAE7BA300273EE6 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		8FCEE96C1CB4E7DE009A92BE /* HistoryVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryVideoViewController.h; sourceTree = "<group>"; };
 		8FCEE96D1CB4E7DE009A92BE /* HistoryVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryVideoViewController.m; sourceTree = "<group>"; };
 		8FE37CD01CA509E700CA4AE6 /* JFGFramworkDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JFGFramworkDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -240,12 +234,8 @@
 		8FFEF94B1CB349CD0020B573 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				8F1D9D4E1D768E3D005461C6 /* PanoramicCameraViewController.h */,
-				8F1D9D4F1D768E3D005461C6 /* PanoramicCameraViewController.m */,
 				8FE37CD91CA509E700CA4AE6 /* ViewController.h */,
 				8FE37CDA1CA509E700CA4AE6 /* ViewController.mm */,
-				8FC8C3201CAE7BA300273EE6 /* MessageViewController.h */,
-				8FC8C3211CAE7BA300273EE6 /* MessageViewController.m */,
 				8FFEF9501CB34A700020B573 /* BindingDevicesViewController.h */,
 				8FFEF9511CB34A700020B573 /* BindingDevicesViewController.m */,
 				8FFEF9531CB34A880020B573 /* AddDeviceViewController.h */,
@@ -369,7 +359,6 @@
 				8F22EE9A1CB79713001DA055 /* DoorCallViewController.m in Sources */,
 				8F14E2931D55CBA200D17C24 /* FLProressHUD.m in Sources */,
 				8FCEE96E1CB4E7DE009A92BE /* HistoryVideoViewController.m in Sources */,
-				8FC8C3221CAE7BA300273EE6 /* MessageViewController.m in Sources */,
 				8F14E2901D55CBA200D17C24 /* FLProgressHUDIndicatorView.m in Sources */,
 				8FE37CDB1CA509E700CA4AE6 /* ViewController.mm in Sources */,
 				8FE37CD81CA509E700CA4AE6 /* AppDelegate.m in Sources */,
@@ -377,7 +366,6 @@
 				8FFEF9581CB365D50020B573 /* VideoViewController.m in Sources */,
 				8FE37CD51CA509E700CA4AE6 /* main.m in Sources */,
 				8F14E2921D55CBA200D17C24 /* FLProgressHUDRingIndicatorView.m in Sources */,
-				8F1D9D501D768E3D005461C6 /* PanoramicCameraViewController.m in Sources */,
 				8F0C2A4F1CC4879800FD2222 /* RobotMsgViewController.m in Sources */,
 				8FFEF9551CB34A880020B573 /* AddDeviceViewController.m in Sources */,
 				8FFEF97D1CB3B0E10020B573 /* SetDeviceWifiViewController.m in Sources */,

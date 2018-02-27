@@ -4,7 +4,7 @@
 //
 //  Created by yangli on 16/4/5.
 //  Copyright © 2016年 yangli. All rights reserved.
-//
+//  添加设备
 
 #import "AddDeviceViewController.h"
 #import <JFGSDK/JFGSDK.h>
@@ -25,8 +25,6 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self initView];
-   
-    
 }
 
 -(void)initView
